@@ -1,0 +1,30 @@
+{
+  "name": "svg-sketch-pdf",
+  "description": "pdf creation from json",
+  "keywords": "svg-sketch json pdf svg",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jameskyburz/svg-sketch-pdf"
+  },
+  "author": {
+    "name": "James Kyburz",
+    "email": "james.kyburz@gmail.com"
+  },
+  "main": "index.js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "browserify": {
+    "transforms": [
+      "brfs"
+    ]
+  },
+  "dependencies": {
+    "brfs": "1.0.2",
+    "browserify": "^4.2.3",
+    "concat-stream": "^1.4.6",
+    "duplexer": "^0.1.1",
+    "pdfkit": "^0.6.3",
+    "rgb2hex": "^0.1.0",
+    "through": "^2.3.4"
+  }
+}
