@@ -52,7 +52,7 @@ module.exports = function(opt) {
     }
 
     var f = doc[type(event)];
-    if (f) {
+    if (f && args(event).length) {
       f.apply(doc, args(event));
       doc.stroke();
       if (process.restore) {
