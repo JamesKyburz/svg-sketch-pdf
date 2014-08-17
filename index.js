@@ -52,7 +52,7 @@ module.exports = function(opt) {
     }
 
     var f = doc[type(event)];
-    if (f && hasArguments(event)) {
+    if (f && args(event).length) {
       f.apply(doc, args(event));
       doc.stroke();
       if (process.restore) {
@@ -84,13 +84,6 @@ module.exports = function(opt) {
     var strokeDashArray = (style['stroke-dasharray'] || '').split(',');
     if (strokeDashArray.length === 2) {
       doc.dash(+strokeDashArray[0], {size: +strokeDashArray[1]});
-    }
-  }
-
-  function hasArguments(event) {
-    return args(event).filter(defined).length;
-    function defined(x) {
-      return x !== null && !isNaN(x);
     }
   }
 
