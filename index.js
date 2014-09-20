@@ -130,10 +130,13 @@ module.exports = function(opt) {
   }
 
   function done() {
-    doc.pipe(concat(function(data) {
-      readable.emit('data', data.toString('base64'));
-      readable.end();
-    }));
+    if (opt.base64) {
+      doc.pipe(concat(function(data) {
+        readable.emit('data', data.toString('base64'));
+      }));
+    } else {
+      doc.pipe(readable);
+    }
     doc.end();
   }
 
