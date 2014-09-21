@@ -22,7 +22,7 @@
     "brfs": "1.0.2",
     "concat-stream": "^1.4.6",
     "duplexer": "^0.1.1",
-    "pdfkit": "^0.6.3",
+    "pdfkit": "^0.7.0",
     "rgb2hex": "^0.1.0",
     "through": "^2.3.4"
   }

@@ -124,8 +124,7 @@ module.exports = function(opt) {
     return {
       layout: event.layout.type,
       margin: 0,
-      size: opt.size,
-      compress: false
+      size: opt.size
     };
   }
 
