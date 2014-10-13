@@ -16,7 +16,7 @@ run in node or browser!
 
 ``` js
 var fs = require('fs');
-var pdf = require('./')({size: [595.28, 841.89]});
+var pdf = require('./')({size: [595.28, 841.89], base64: typeof window !== 'undefined'});
 var concat = require('concat-stream');
 pdf.pipe(concat(write));
 pdf.write([
