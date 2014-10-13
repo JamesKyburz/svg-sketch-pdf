@@ -133,6 +133,7 @@ module.exports = function(opt) {
     if (opt.base64) {
       doc.pipe(concat(function(data) {
         readable.emit('data', data.toString('base64'));
+        readable.end();
       }));
     } else {
       doc.pipe(readable);
