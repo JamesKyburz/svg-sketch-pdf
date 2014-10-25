@@ -71,8 +71,18 @@ module.exports = function(opt) {
     ;
   }
 
-  function applyStyles(style) {
-    dash(style);
+  function applyStyles(args) {
+    dash(args);
+    Object.keys(args).forEach(applyStyle.bind(null, args));
+  }
+
+  function applyStyle() {
+    var argv = [].slice.call(arguments);
+    var args = argv.shift();
+    var type = argv.shift();
+    if (doc[type]) {
+      doc[type](args[type]);
+    }
   }
 
   function strokeColor(color) {
