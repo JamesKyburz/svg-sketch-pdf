@@ -57,6 +57,9 @@ module.exports = function(opt) {
       doc.stroke();
       if (process.restore) {
         doc.restore();
+        if (opt.document) {
+          opt.document(doc);
+        }
         process.restore = false;
       }
     }
