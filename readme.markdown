@@ -6,7 +6,7 @@ using the awesome [pdfkit](https://github.com/devongovett/pdfkit) library
 
 converts json from svg-sketch to pdf.
 
-Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/?gist=b4bd7115e66f79e0a841)
+Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/embed?gist=b4bd7115e66f79e0a841)
 
 use with [browserify](http://browserify.org)
 
