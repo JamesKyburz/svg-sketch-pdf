@@ -40,12 +40,18 @@ module.exports = function(opt) {
     }
 
     if (event.args && event.args.stroke) {
-      color = rgb2hex(event.args.stroke).hex;
+      color = event.args.stroke === 'transparent' ?
+        'transparent'
+        :
+        rgb2hex(event.args.stroke).hex
+      ;
     }
 
     if (event.type === 'style') {
       applyStyles(event.args);
     }
+
+    if (color === 'transparent') return;
 
     if (color) {
       strokeColor(color);
