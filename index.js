@@ -5,19 +5,21 @@ var concat     = require('concat-stream');
 var rotate     = require('./rotate-event-counter-clockwise');
 var rgb2hex    = require('rgb2hex');
 var fs         = require('fs');
+var xtend      = require('xtend');
 
 module.exports = function(opt) {
   var doc;
   var readable = through();
-  var writable = through(process, done);
+  var writable = through(create, done);
   var s = duplexer(writable, readable);
 
   var layout;
   var restore = false;
+  var style;
   var color;
 
-  function process(event) {
-    if (event.forEach) return event.forEach(process);
+  function create(event) {
+    if (event.forEach) return event.forEach(create);
     if (event.type === 'header') {
       layout = event.layout.type;
       createPage(event);
@@ -25,8 +27,16 @@ module.exports = function(opt) {
 
     if (layout === 'portrait') rotate(event, 1, opt.size[1]);
 
+    if (event.type === 'style') {
+      style = xtend(event.args);
+    }
+
+    if (event.layout && event.layout.style) {
+      style = xtend(event.layout.style);
+    }
+
     if (event.layout || event.type === 'style') {
-      process.restore = true;
+      restore = true;
       doc.save();
     }
     if (event.layout) {
@@ -47,9 +57,7 @@ module.exports = function(opt) {
       ;
     }
 
-    if (event.type === 'style') {
-      applyStyles(event.args);
-    }
+    if (style) applyStyles(style);
 
     if (color === 'transparent') return;
 
@@ -61,9 +69,9 @@ module.exports = function(opt) {
     if (f && args(event).length) {
       f.apply(doc, args(event));
       doc.stroke();
-      if (process.restore) {
+      if (restore) {
         doc.restore();
-        process.restore = false;
+        restore = false;
       }
     }
   }
@@ -99,7 +107,9 @@ module.exports = function(opt) {
   function dash(style) {
     var strokeDashArray = (style['stroke-dasharray'] || '').split(',');
     if (strokeDashArray.length === 2) {
-      doc.dash(+strokeDashArray[0], {size: +strokeDashArray[1]});
+      doc.dash(+strokeDashArray[0], {space: +strokeDashArray[1]});
+    } else {
+      doc.undash();
     }
   }
 
