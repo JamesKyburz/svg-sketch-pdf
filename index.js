@@ -31,10 +31,6 @@ module.exports = function(opt) {
       style = xtend(event.args);
     }
 
-    if (event.layout && event.layout.style) {
-      style = xtend(event.layout.style);
-    }
-
     if (event.layout || event.type === 'style') {
       restore = true;
       doc.save();
