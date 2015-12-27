@@ -11,7 +11,7 @@
     "email": "james.kyburz@gmail.com"
   },
   "main": "index.js",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "browserify": {
     "transforms": [
