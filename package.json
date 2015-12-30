@@ -27,7 +27,7 @@
     "duplexer": "0.1.1",
     "pdfkit": "0.7.2",
     "rgb2hex": "0.1.0",
-    "through": "2.3.8",
+    "through2": "2.0.0",
     "xtend": "4.0.1"
   },
   "devDependencies": {
