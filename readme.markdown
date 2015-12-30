@@ -6,6 +6,10 @@ using the awesome [pdfkit](https://github.com/devongovett/pdfkit) library
 
 converts json from svg-sketch to pdf.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
+[![build status](https://api.travis-ci.org/JamesKyburz/svg-sketch-pdf.svg)](http://travis-ci.org/JamesKyburz/svg-sketch-pdf)
+
 Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/embed?gist=b4bd7115e66f79e0a841)
 
 use with [browserify](http://browserify.org)
@@ -54,9 +58,12 @@ function write(data) {
 ```
 
 `opt.size` is [width, height]
+
 `opt.document` optional `function document(pdfkitDoc) { }`
+
 `opt.yoffset` optional `function yoffset(event) {}`
-`
+
+`opt.compress` optional compress pdf (default false)
 
 # install
 
