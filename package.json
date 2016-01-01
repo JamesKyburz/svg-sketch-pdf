@@ -22,7 +22,7 @@
     "test": "tape test/*.js | faucet"
   },
   "dependencies": {
-    "brfs": "1.4.1",
+    "brfs": "1.4.2",
     "concat-stream": "1.5.1",
     "duplexer": "0.1.1",
     "pdfkit": "0.7.2",
