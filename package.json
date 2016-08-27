@@ -11,7 +11,7 @@
     "email": "james.kyburz@gmail.com"
   },
   "main": "index.js",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "scripts": {
     "prepublish": "standard",
     "test": "tape test/*.js | faucet"
