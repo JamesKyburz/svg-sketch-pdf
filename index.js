@@ -1,4 +1,4 @@
-var through = require('through2')
+var through = require('through')
 var Pdf = require('pdfkit')
 var duplexer = require('duplexer')
 var concat = require('concat-stream')
@@ -8,8 +8,8 @@ var xtend = require('xtend')
 
 module.exports = function (opt) {
   var doc
-  var readable = through.obj()
-  var writable = through.obj(create, done)
+  var readable = through()
+  var writable = through(create, done)
   var s = duplexer(writable, readable)
 
   var layout
@@ -17,12 +17,9 @@ module.exports = function (opt) {
   var style
   var color
 
-  function create (event, enc, cb) {
-    if (event.forEach) {
-      event.forEach(create)
-      cb(null, event)
-      return
-    }
+  function create (event) {
+    if (event.forEach) return event.forEach(create)
+
     if (event.type === 'header') {
       layout = event.layout.type
       createPage(event)
@@ -69,7 +66,6 @@ module.exports = function (opt) {
         restore = false
       }
     }
-    if (typeof cb === 'function') cb(null, event)
   }
 
   function type (event) {
@@ -148,7 +144,7 @@ module.exports = function (opt) {
     }
   }
 
-  function done (cb) {
+  function done () {
     if (opt.base64) {
       doc.pipe(concat(function (data) {
         readable.emit('data', data.toString('base64'))
@@ -158,7 +154,6 @@ module.exports = function (opt) {
       doc.pipe(readable)
     }
     doc.end()
-    cb()
   }
 
   return s
