@@ -14,8 +14,13 @@
   "version": "1.0.24",
   "scripts": {
     "prepublish": "standard",
+    "build": "browserify -s SvgSketchPdf -e ./ | uglifyjs -c warnings=false -m > svg-sketch-pdf.min.js",
     "test": "tape test/*.js | faucet"
   },
+  "files": [
+    "index.js",
+    "rotate-event-counter-clockwise.js"
+  ],
   "dependencies": {
     "concat-stream": "1.6.0",
     "duplexer": "0.1.1",
