@@ -1,5 +1,7 @@
 # svg-sketch-pdf
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/svg-sketch-pdf.svg)](https://greenkeeper.io/)
+
 pdf creation for [svg-sketch](https://github.com/jameskyburz/svg-sketch)
 
 using the awesome [pdfkit](https://github.com/devongovett/pdfkit) library
