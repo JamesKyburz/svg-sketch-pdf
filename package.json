@@ -11,7 +11,7 @@
     "email": "james.kyburz@gmail.com"
   },
   "main": "index.js",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "scripts": {
     "prepublish": "standard",
     "build": "browserify -s SvgSketchPdf -e ./ | uglifyjs -c warnings=false -m > svg-sketch-pdf.min.js",
