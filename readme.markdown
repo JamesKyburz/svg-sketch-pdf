@@ -1,16 +1,14 @@
 # svg-sketch-pdf
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/svg-sketch-pdf.svg)](https://greenkeeper.io/)
-
 pdf creation for [svg-sketch](https://github.com/jameskyburz/svg-sketch)
 
 using the awesome [pdfkit](https://github.com/devongovett/pdfkit) library
 
 converts json from svg-sketch to pdf.
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
+[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/feross/standard)
 [![build status](https://api.travis-ci.org/JamesKyburz/svg-sketch-pdf.svg)](http://travis-ci.org/JamesKyburz/svg-sketch-pdf)
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/svg-sketch-pdf.svg)](https://greenkeeper.io/)
 
 Try it out! [![view on requirebin](http://requirebin.com/badge.png)](http://requirebin.com/embed?gist=b4bd7115e66f79e0a841)
 
