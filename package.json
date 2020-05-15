@@ -22,7 +22,7 @@
     "rotate-event-counter-clockwise.js"
   ],
   "dependencies": {
-    "concat-stream": "1.6.0",
+    "concat-stream": "2.0.0",
     "duplexer": "0.1.1",
     "pdfkit": "0.8.2",
     "rgb2hex": "0.1.0",
