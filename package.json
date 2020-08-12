@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "concat-stream": "1.6.0",
-    "duplexer": "0.1.1",
+    "duplexer": "0.1.2",
     "pdfkit": "0.8.2",
     "rgb2hex": "0.1.0",
     "through2": "2.0.3",
